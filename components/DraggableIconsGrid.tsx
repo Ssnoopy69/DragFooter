@@ -143,7 +143,7 @@ export default function DraggableIconsGrid({
                   zIndex: isDragging ? 999 : 1,
                 }}>
                 <View className="h-[78px] w-20 items-center justify-center rounded-[24px] border-2 border-slate-50 bg-slate-50 shadow-md">
-                  <OctopusIcon width={24} height={24} />
+                  <OctopusIcon width={42} height={42} />
                   <Text className="mt-1 text-center text-xs text-slate-600">{item.label}</Text>
                 </View>
               </Animated.View>

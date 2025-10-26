@@ -19,6 +19,8 @@ import OutIcon from '../assets/icons/MenuList/out.svg';
 import PlusIcon from '../assets/icons/MenuList/plus.svg';
 import SettingsIcon from '../assets/icons/MenuList/settings.svg';
 
+import OctopusIcon from '../assets/icons/octopus.svg';
+
 export type DragItem = {
   id: string;
   label: string;
@@ -127,6 +129,8 @@ export default function Footer() {
         return <Barrow {...iconProps} />;
       case 'group2':
         return <Barrow {...iconProps} />;
+      case 'octopus':
+        return <OctopusIcon {...iconProps} />;
       default:
         return (
           <View
@@ -209,7 +213,7 @@ export default function Footer() {
               ? {
                   ...b,
                   label: item.label,
-                  color: item.color,
+                  color: '#fff',
                   icon: item.icon,
                 }
               : b
@@ -371,8 +375,8 @@ export default function Footer() {
     <>
       <View
         ref={footerContainerRef}
-        className="absolute bottom-6 w-full flex-row items-center justify-between px-4 h-14">
-        <View className="w-72 flex-row items-center rounded-full bg-white pb-2 py-2 shadow-md">
+        className="absolute bottom-6 h-14 w-full flex-row items-center justify-between px-4">
+        <View className="w-72 flex-row items-center rounded-full bg-white py-2 pb-2 shadow-md">
           {currentFooterButtons.map((btn, idx) => (
             <View key={btn.id} className="flex-1 items-center">
               <TouchableOpacity
@@ -479,12 +483,12 @@ export default function Footer() {
                   <Pressable
                     key={item.id}
                     onPress={() => handleMenuPress(item)}
-                    className="flex-row justify-start">
-                    <Text className="text-center font-medium" style={{ color: item.textColor }}>
+                    className="flex-row items-center justify-end gap-3 space-x-3">
+                    <Text className="text-base font-medium" style={{ color: item.textColor }}>
                       {item.label}
                     </Text>
                     <View
-                      className="items-center justify-center"
+                      className="items-center justify-center rounded-full shadow-md"
                       style={{
                         backgroundColor: item.color,
                         width: 42,
